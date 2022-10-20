@@ -13,6 +13,8 @@
 		3DE84E392901A8BD008ED323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE84E372901A8BD008ED323 /* Main.storyboard */; };
 		3DE84E3B2901A8BF008ED323 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE84E3A2901A8BF008ED323 /* Assets.xcassets */; };
 		3DE84E3E2901A8BF008ED323 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE84E3C2901A8BF008ED323 /* LaunchScreen.storyboard */; };
+		3DE84E462901AFE7008ED323 /* Contacto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE84E452901AFE7008ED323 /* Contacto.swift */; };
+		3DE84E482901B0BB008ED323 /* ContactosController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE84E472901B0BB008ED323 /* ContactosController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3DE84E3A2901A8BF008ED323 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DE84E3D2901A8BF008ED323 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3DE84E3F2901A8BF008ED323 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3DE84E452901AFE7008ED323 /* Contacto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacto.swift; sourceTree = "<group>"; };
+		3DE84E472901B0BB008ED323 /* ContactosController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactosController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				3DE84E3A2901A8BF008ED323 /* Assets.xcassets */,
 				3DE84E3C2901A8BF008ED323 /* LaunchScreen.storyboard */,
 				3DE84E3F2901A8BF008ED323 /* Info.plist */,
+				3DE84E452901AFE7008ED323 /* Contacto.swift */,
+				3DE84E472901B0BB008ED323 /* ContactosController.swift */,
 			);
 			path = PracticaContactos;
 			sourceTree = "<group>";
@@ -138,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DE84E482901B0BB008ED323 /* ContactosController.swift in Sources */,
+				3DE84E462901AFE7008ED323 /* Contacto.swift in Sources */,
 				3DE84E362901A8BD008ED323 /* ViewController.swift in Sources */,
 				3DE84E322901A8BD008ED323 /* AppDelegate.swift in Sources */,
 				3DE84E342901A8BD008ED323 /* SceneDelegate.swift in Sources */,
