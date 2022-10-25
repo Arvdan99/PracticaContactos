@@ -6,13 +6,14 @@
 //  Copyright © 2022 Alumno. All rights reserved.
 //
 
-class Materia {
+class Contacto {
 var Nombre : String
-var Contacto: String
+var Numero: String
 
-init(Nombre: String, Contacto: String)
+init(Nombre: String, Numero: String)
 {
     self.Nombre = Nombre
-    self.Contacto = Contacto
+    self.Numero = Numero
+}
 }
 

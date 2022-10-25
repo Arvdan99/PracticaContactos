@@ -6,13 +6,16 @@
 //  Copyright © 2022 Alumno. All rights reserved.
 //
 
-class AlumnosController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+import UIKit
 
-@IBOutlet weak var tvAlumnos: UITableView!
+class ContactosController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+
+    @IBOutlet weak var tvContactos: UITableView!
+    //@IBOutlet weak var tvAlumnos: UITableView!
+
+    var Contactos : [Contacto] = []
     
-var Nombre : [Nombre] = []
-var Telefono : [Contacto] = []
-
 //Altura de celda
 func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 80
@@ -24,16 +27,30 @@ func numberOfSections(in tableView: UITableView) -> Int {
 
 //Numero de filas por seccion
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return Alumnos.count
+    return Contactos.count
 }
 
 //Construye cada celda
 func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let celda = tableView.dequeueReusableCell(withIdentifier: "celdaAlumno") as? CeldaAlumnoController
-    celda?.lblNombre.text = Alumnos[indexPath.row].nombre
-    celda?.lblMatricula.text = Alumnos[indexPath.row].matricula
-    celda?.lblCarrera.text = Alumnos[indexPath.row].carrera
-    celda?.lblEdad.text = Alumnos[indexPath.row].edad
+    let celda = tableView.dequeueReusableCell(withIdentifier: "celdaContactos") as? CeldaContactoController
+    celda?.lblNombre.text = Contactos[indexPath.row].Nombre
+    celda?.lblTelefono.text = Contactos[indexPath.row].Numero
     return celda!
 }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    
+        
+        Contactos.append(Contacto(Nombre: "Max Rivera", Numero: "6442011638"))
+        Contactos.append(Contacto(Nombre: "Cesar E", Numero: "6442011785"))
+        
+    }
+    
+    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    //   let destino = segue.destination as! DetallesAlumnoController
+    // destino.alumno = Alumnos[tvAlumnos.indexPathForSelectedRow!.row]
+    //}
+    
+}
