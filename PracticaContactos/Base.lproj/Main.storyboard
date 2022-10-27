@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="822" y="146"/>
         </scene>
-        <!--Contactos Controller-->
+        <!--Contactos-->
         <scene sceneID="QkO-5P-Wyh">
             <objects>
                 <viewController id="qsE-a6-Tvl" customClass="ContactosController" customModule="PracticaContactos" customModuleProvider="target" sceneMemberID="viewController">
@@ -62,6 +62,7 @@
                                         <connections>
                                             <outlet property="lblNombre" destination="FyG-yU-1Rw" id="B6w-8z-wbt"/>
                                             <outlet property="lblTelefono" destination="gjh-LR-elf" id="02s-XI-gAh"/>
+                                            <segue destination="P6F-ou-a0F" kind="show" identifier="goToEditar" id="btY-IH-Abj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -75,12 +76,16 @@
                         <viewLayoutGuide key="safeArea" id="5aM-0l-THZ"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="y4i-Ur-kLR"/>
+                    <navigationItem key="navigationItem" title="Contactos" id="y4i-Ur-kLR">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="dEK-Zj-fm4">
+                            <connections>
+                                <segue destination="M09-w9-x4y" kind="show" identifier="goToNuevoContacto" id="B7M-fJ-fMd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tvContactos" destination="f9c-BY-FLo" id="QM1-OI-Y8N"/>
-                        <segue destination="M09-w9-x4y" kind="show" id="KRb-QA-rZU"/>
-                        <segue destination="P6F-ou-a0F" kind="show" id="EoY-n5-rvF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mut-T5-Pb4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -90,7 +95,7 @@
         <!--Nuevo contacto-->
         <scene sceneID="wML-8U-4AX">
             <objects>
-                <viewController id="M09-w9-x4y" sceneMemberID="viewController">
+                <viewController id="M09-w9-x4y" customClass="NuevoContactoController" customModule="PracticaContactos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xxb-7T-3jW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,21 +130,28 @@
                                 <rect key="frame" x="349" y="270" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Añadir"/>
+                                <connections>
+                                    <action selector="doTapNuevoContacto:" destination="M09-w9-x4y" eventType="touchUpInside" id="LpC-gZ-HeQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="92z-rM-Hc8"/>
                     </view>
                     <navigationItem key="navigationItem" title="Nuevo contacto" id="Ly4-Te-fu7"/>
+                    <connections>
+                        <outlet property="txtNombre" destination="I5k-4i-Oix" id="k4I-3U-49P"/>
+                        <outlet property="txtTelefono" destination="xHh-V9-Ea1" id="MHq-JX-swy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v0Y-rI-QMK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242.0289855072465" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2350.7246376811595" y="-64.285714285714278"/>
         </scene>
         <!--Editar contacto-->
         <scene sceneID="Bam-GW-OZw">
             <objects>
-                <viewController id="P6F-ou-a0F" sceneMemberID="viewController">
+                <viewController id="P6F-ou-a0F" customClass="EditarContactoController" customModule="PracticaContactos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZEN-cY-VnX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -174,16 +186,23 @@
                                 <rect key="frame" x="326" y="274" width="68" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Actualizar"/>
+                                <connections>
+                                    <action selector="doTapActualizar:" destination="P6F-ou-a0F" eventType="touchUpInside" id="Fzs-9r-HjO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oRJ-5u-35a"/>
                     </view>
                     <navigationItem key="navigationItem" title="Editar contacto" id="okN-z4-hbu"/>
+                    <connections>
+                        <outlet property="txtNombre" destination="TdK-4p-3xD" id="T6S-Wh-aQo"/>
+                        <outlet property="txtTelefono" destination="FhF-ix-Qrx" id="F4j-aa-HpY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XcY-ur-3aA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2937.68115942029" y="138.61607142857142"/>
+            <point key="canvasLocation" x="2374" y="618"/>
         </scene>
     </scenes>
 </document>

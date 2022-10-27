@@ -12,7 +12,7 @@ class ContactosController: UIViewController, UITableViewDelegate, UITableViewDat
 
 
     @IBOutlet weak var tvContactos: UITableView!
-    //@IBOutlet weak var tvAlumnos: UITableView!
+    
 
     var Contactos : [Contacto] = []
     
@@ -37,6 +37,7 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
     celda?.lblTelefono.text = Contactos[indexPath.row].Numero
     return celda!
 }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,9 +49,27 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
         
     }
     
-    //override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //   let destino = segue.destination as! DetallesAlumnoController
-    // destino.alumno = Alumnos[tvAlumnos.indexPathForSelectedRow!.row]
-    //}
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToEditar" {
+            let destino = segue.destination as! EditarContactoController
+            destino.Contactos = Contactos[tvContactos.indexPathForSelectedRow!.row]
+            destino.CallBackActualizar = actualizarEtiqueta
+        }
+        
+        if segue.identifier == "goToNuevoContacto" {
+            let destino = segue.destination as! NuevoContactoController
+            destino.CallBackNuevo = nuevoEtiqueta
+        }
+    }
+    
+    func nuevoEtiqueta(Contactos: Contacto){
+        self.Contactos.append(Contactos)
+        tvContactos.reloadData()
+    }
+    
+    
+    func actualizarEtiqueta() {
+        tvContactos.reloadData()
+        }
     
 }
